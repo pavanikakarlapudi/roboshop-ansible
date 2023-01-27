@@ -1,3 +1,10 @@
-- name: test
-  ansible.builtin.debug:
-    msg: hello from front end
+- name: install nginx
+  ansible.builtin.yum:
+    name: nginx
+    state: installed
+   register: out
+
+- name: out
+    debug:
+      msg: "{{out}}"
+
