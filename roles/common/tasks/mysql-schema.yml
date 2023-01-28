@@ -1,3 +1,8 @@
-- name: dummy
-  debug:
-    msg: hello
+- name: load mysql schema
+  community.mysql.mysql_db:
+    state: import
+    name: all
+    target: /app/schema/{{component}}.aql
+    login_host: mysql-dev.arjundevops.online
+    login_user: root
+    login_password: "{{ root_mysql_password}}"
