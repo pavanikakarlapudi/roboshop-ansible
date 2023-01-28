@@ -1,11 +1,13 @@
+
 [Unit]
-Description = Cart Service
+Description=Shipping Service
+
 [Service]
 User=roboshop
-Environment=REDIS_HOST=redis-dev.arjundevops.online
-Environment=CATALOGUE_HOST=catalogue-dev.arjundevops.online
-ExecStart=/bin/node /app/server.js
-SyslogIdentifier=cart
+Environment=CART_ENDPOINT=cart-dev.arjundevops.online:8080
+Environment=DB_HOST=mysql-dev.arjundevops.online
+ExecStart=/bin/java -jar /app/shipping.jar
+SyslogIdentifier=shipping
 
 [Install]
 WantedBy=multi-user.target
