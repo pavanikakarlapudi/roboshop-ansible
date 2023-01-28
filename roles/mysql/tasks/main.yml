@@ -14,7 +14,7 @@
 - name: start mysql service
   ansible.builtin.systemd:
     name: mysql
-    state: started
+    state: restarted
     enabled: yes
 
 - name: reset mysql default password
