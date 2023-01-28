@@ -5,12 +5,11 @@
       - mysql
     state: installed
 
-
 - name: load mysql schema
   community.mysql.mysql_db:
     state: import
     name: all
-    target: /app/schema/{{component}}.aql
+    target: /app/schema/{{component}}.yml
     login_host: mysql-dev.arjundevops.online
     login_user: root
     login_password: "{{ root_mysql_password}}"
