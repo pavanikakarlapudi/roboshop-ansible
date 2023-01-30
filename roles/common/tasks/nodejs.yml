@@ -5,6 +5,11 @@
   ansible.builtin.include_tasks: "app-prereq.yml"
   when: schema_load
 
+- name: install nodejs
+  ansible.builtin.yum:
+    name: nodejs
+    state: installed
+
 - name: install nodejs dependencies
   community.general.npm:
     path: /app
