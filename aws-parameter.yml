@@ -1,0 +1,11 @@
+- name: create parameters
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: create or update key/value pair in aws ssm parameter store
+      community_aws.ssm_parameter:
+        name: "{{ item.name}}"
+        value: "{{item.value}}"
+        region: us-east-1
+      loop:
+        - {name: "dev.cart.REDIS_HOST", value: "redis-dev.arjundevops.online"}
