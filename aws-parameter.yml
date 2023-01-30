@@ -28,8 +28,8 @@
         - { name: "dev.user.MONGO", value: "true" }
         - { name: "dev.user.MONGO_URL", value: "mongodb://mongodb-dev.arjundevops.online:27017/users" }
         - { name: "dev.user.REDIS_HOST", value: "redis-dev.arjundevops.online" }
+        - { name: "dev.payment.AMQP_PASS", value: "roboshop123" }
 
          ### PASSWORDS SHOULD NEVER BE KEPT IN THESE REPOS, THOSE SHOULD BE CREATED MAUALLY, BUT FOR LAB PURPOSE IAM CREATING HERE
 
 
-         - { name: "dev.payment.AMQP_PASS", value: "roboshop123" }
