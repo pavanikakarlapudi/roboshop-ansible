@@ -9,8 +9,6 @@
 
 - name: app pre-req
   ansible.builtin.include_tasks: "app-prereq.yml"
-  when: schema_load
-
 
 - name: install nodejs dependencies
   community.general.npm:
