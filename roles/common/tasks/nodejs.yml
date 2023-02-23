@@ -1,23 +1,30 @@
-- name: configure nodejs repos
+- name: Configure NodeJS repos
   ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_lts.x | bash
 
-- name: install nodejs
+- name: Install NodeJS
   ansible.builtin.yum:
     name: nodejs
     state: installed
 
-
-- name: app pre-req
+- name: App Pre-Req
   ansible.builtin.include_tasks: "app-prereq.yml"
 
-- name: install nodejs dependencies
+- name: Install Nodejs dependencies
   community.general.npm:
     path: /app
     state: latest
 
-- name: systemd setup
+- name: Download DocDB CA file
+  ansible.builtin.get_url:
+    url:  https://s3.amazonaws.com/rds-downloads/rds-combined-ca-bundle.pem
+    dest: /app/rds-combined-ca-bundle.pem
+  when: schema_load
+
+- name: SystemD Setup
   ansible.builtin.include_tasks: "systemd.yml"
 
-- name: load schema
+- name: Load Schema
   ansible.builtin.include_tasks: "{{schema_type}}-schema.yml"
   when: schema_load
+
+
