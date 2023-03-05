@@ -12,18 +12,19 @@
         - { name: "dev.cart.CATALOGUE_HOST", value: "catalogue-dev.arjundevops.online" }
         - { name: "dev.catalogue.MONGO", value: "true" }
         - { name: "dev.catalogue.MONGO_URL", value: "mongodb://mongodb-dev.arjundevops.online:27017/catalogue" }
-        - { name: "dev.frontend.CATALOGUE_URL", value: "http://catalogue-dev.arjundevops.online:8080/" }
-        - { name: "dev.frontend.CART_URL", value: "http://cart-dev.arjundevops.online:8080/" }
-        - { name: "dev.frontend.USER_URL", value: "http://user-dev.arjundevops.online:8080/" }
-        - { name: "dev.frontend.PAYMENT_URL", value: "http://payment-dev.arjundevops.online:8080/" }
-        - { name: "dev.frontend.SHIPPING_URL", value: "http://shipping-dev.arjundevops.online:8080/" }
+        - { name: "dev.catalogue.MONGO_URL", value: "mongodb://mongodb-dev.arjundevops.online:27017/catalogue" }
+        - { name: "dev.frontend.CATALOGUE_URL", value: "http://catalogue-dev.arjundevops.online:80/" }
+        - { name: "dev.frontend.CART_URL", value: "http://cart-dev.arjundevops.online:80/" }
+        - { name: "dev.frontend.USER_URL", value: "http://user-dev.arjundevops.online:80/" }
+        - { name: "dev.frontend.PAYMENT_URL", value: "http://payment-dev.arjundevops.online:80/" }
+        - { name: "dev.frontend.SHIPPING_URL", value: "http://shipping-dev.arjundevops.online:80/" }
         - { name: "dev.payment.CART_HOST", value: "cart-dev.arjundevops.online" }
         - { name: "dev.payment.USER_HOST", value: "user-dev.arjundevops.online" }
-        - { name: "dev.payment.CART_PORT", value: "8080" }
-        - { name: "dev.payment.USER_PORT", value: "8080" }
+        - { name: "dev.payment.CART_PORT", value: "80" }
+        - { name: "dev.payment.USER_PORT", value: "80" }
         - { name: "dev.payment.AMQP_HOST", value: "rabbitmq-dev.arjundevops.online" }
         - { name: "dev.payment.AMQP_USER", value: "roboshop" }
-        - { name: "dev.shipping.CART_ENDPOINT", value: "cart-dev.arjundevops.online:8080" }
+        - { name: "dev.shipping.CART_ENDPOINT", value: "cart-dev.arjundevops.online:80" }
         - { name: "dev.shipping.DB_HOST", value: "mysql-dev.arjundevops.online" }
         - { name: "dev.user.MONGO", value: "true" }
         - { name: "dev.user.MONGO_URL", value: "mongodb://mongodb-dev.arjundevops.online:27017/users" }
